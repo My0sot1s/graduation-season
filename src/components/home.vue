@@ -75,7 +75,7 @@ export default {
                 },
             ],
             wishes:[
-                
+
             ],
             favored:[
                 
@@ -122,7 +122,6 @@ export default {
             }
         },
         updateBarrage(num){
-            document.getElementById('l'+num).style = `top:${Math.round(Math.random()*20)}vh`
             if(this.wishes.length){
                 this.$set(this.texts,num,{
                     createTime:this.wishes[0].createTime,
@@ -134,12 +133,15 @@ export default {
                     grade:this.wishes[0].grade,
                     labelType:this.wishes[0].labelType,
                 });
-
+                document.getElementById('l'+num).style = `top:${Math.round(Math.random()*20)}vh`
+                document.getElementById('l'+num).style.animationPlayState="running"
                 this.initBarrage(num)
                 
                 console.log("弹幕"+num+"更新了")
 
                 this.wishes.shift()
+            }else{
+                document.getElementById('l'+num).style.animationPlayState="paused"
             }
         },
         getRandom(){
@@ -280,6 +282,7 @@ export default {
                         this.wishes.shift()
                         /* console.log("读取对象:") */
                         console.log(this.texts[j])
+                        console.log("r"+j)
                         document.getElementById('l'+j).style.animationPlayState="running"
                     }
                 }
