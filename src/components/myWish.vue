@@ -105,7 +105,7 @@ export default {
             wishText:'',
             grade:'',
             labelType:'留',
-            showDropdown: true
+            showDropdown: false
         }
     },
     mounted(){
