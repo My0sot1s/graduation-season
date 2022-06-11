@@ -151,7 +151,7 @@ export default {
                 .then((response) => {
                     console.log(response)
                     for(let i=0;i<8;i++){
-                        if(response.data.length > i){
+                        if(response.data.data.length > i){
                             this.wishes.push(
                             {
                                 color:0,
@@ -280,7 +280,6 @@ export default {
                         this.wishes.shift()
                         /* console.log("读取对象:") */
                         console.log(this.texts[j])
-                        console.log("r"+j)
                         document.getElementById('l'+j).style.animationPlayState="running"
                     }
                 }

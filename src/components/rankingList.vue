@@ -3,6 +3,10 @@
       <div id="head">
           <div id="title">菁华于初，再见未央</div>
       </div>
+      <div id="back" @click="backToHome()">
+        <div id="backImg" :style="{backgroundImage:`url(${back})`}"></div>
+        <div id="backText">大家的愿望树</div>
+      </div>
       <div class="text" id="myWishTitle" v-if="this.myWishes.length>1">我的祝福：</div>
       <div v-if="this.myWishes.length>1" id="m1" class="myWishes" @click="show(1)">{{this.myWishes[1].text}}
         <div class="delete" v-if="showDelete[1]" @click="deletem(1)">删除</div>
@@ -108,6 +112,7 @@
 <script>
 import like from '../assets/pictures/like.png'
 import liked from '../assets/pictures/liked.png'
+import back from '../assets/pictures/back.png'
 
 export default {
     name:'rankingList',
@@ -133,6 +138,7 @@ export default {
             favored:[
                 
             ],
+            back,
             img:[
                 '',
                 like,
@@ -147,6 +153,9 @@ export default {
         }
     },
     methods:{
+        backToHome(){
+            this.$router.push('/home')
+        },
         show(index){
             this.showDelete[index] == 1? (this.$set(this.showDelete, index, 0)) : (this.$set(this.showDelete, index, 1))
         },
@@ -268,6 +277,27 @@ export default {
             transform: scale(100%);
             opacity: 1;
         }
+    }
+    #back {
+        position: absolute;
+        top:3vh;
+        right: 0vw;
+        width: 20vw;
+        height: 17vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #backImg {
+        flex-grow: 9;
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+    #backText {
+        flex-grow: 1;
+        font-size: 1vh;
+        text-align: center;
+        color: rgb(77,65,95);
     }
     .row1 {
         display: flex;
