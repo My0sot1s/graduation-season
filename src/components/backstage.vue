@@ -43,7 +43,7 @@ export default {
                     }})
                     .then((response) => {
                         if(response.data.code == 200){
-                            this.originWishes.splice(wish.index, 1)
+                            this.originWishes.splice(this.originWishes.findIndex(owish => owish.messageId == wish.messageId), 1)
                         }
                 })
         },

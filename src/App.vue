@@ -7,9 +7,6 @@
 </template>
 
 <script>
-import b1 from './assets/pictures/background1.jpg'
-import b2 from './assets/pictures/background2.jpg'
-import b3 from './assets/pictures/background3.jpg'
 import b from './assets/pictures/background.png'
 
 export default {
@@ -37,9 +34,15 @@ export default {
     };
 
     addEvenListener(function () {
+      document.body.style.display = "none";
       setTimeout(function () {
         initViewport(window.innerHeight);
-        console.log(123);
+        if(window.innerWidth > window.innerHeight){
+          document.body.style.display = "none";
+          alert("请在竖屏下打开！")
+        }else{
+          document.body.style.display = "block";
+        }
       }, 300);
     }, "orientationchange");
   },
