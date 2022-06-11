@@ -298,6 +298,7 @@ export default {
         font-size: 1vh;
         text-align: center;
         color: rgb(77,65,95);
+        font-family: HYMingChanKeBenW;
     }
     .row1 {
         display: flex;
