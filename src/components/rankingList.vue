@@ -278,7 +278,6 @@ export default {
         align-items: center;
         font-size: 1.8vh;
         justify-content: space-between;
-        width: 7vw;
     }
     .delete {
         display: inline-block;
@@ -301,6 +300,7 @@ export default {
         height: 1.8vh;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        margin-right: 1vw;
     }
     .icons > div{
         font-size: 0.1vh;
