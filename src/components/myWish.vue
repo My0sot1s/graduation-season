@@ -84,10 +84,9 @@ export default {
                 }}
             )
                 .then((response) => {
+                    alert(response.data.message)
                     if(response.data.code == 200){
                         this.$router.push('./rankingList')
-                    }else{
-                        alert(response.data.message)
                     }
                 })
                 .catch((response) => {
