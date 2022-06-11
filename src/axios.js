@@ -78,7 +78,7 @@ function checkCode() {
 }
 
 function checkToken() {
-  console.log("t="+state.token)
+  console.log("token="+state.token)
   return new Promise((resolve, reject) => {
     if (!state.token) {
       wxLoginRedirect()
@@ -155,7 +155,6 @@ export function initAxios(vue) {
         if (data && data.userInfo) {
           vue.prototype.userInfo = data.userInfo
         }
-
         resolve()
       })
   })

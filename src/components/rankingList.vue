@@ -161,6 +161,10 @@ export default {
                     .then((response) => {
                         if(response.data.code == 200){
                             this.myWishes.splice(index, 1)
+                            let deleteIndex = this.mostPopularWishes.findIndex(owish => owish.messageId == this.myWishes[index].messageId)
+                            if(index != -1){
+                                this.originWishes.splice(deleteIndex, 1)
+                            }
                         }
                 })
         },
