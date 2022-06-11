@@ -289,7 +289,7 @@ export default {
                 setInterval(() => {
                     this.getRandom()
                     console.log("定时刷新了弹幕库")
-                }, 20000);
+                }, 15000);
             })
             .catch((response) => {
                 console.log(response);
