@@ -1,0 +1,20 @@
+image: node:alpine
+
+stages:
+    - install
+    - build
+
+cache:
+    key: Myosotis_online_wish
+    paths:
+        - node_modules
+
+install_job:
+    stage: install
+    script:
+        - yarn install
+ 
+build_job:
+    stage: build
+    script:
+        - yarn build
