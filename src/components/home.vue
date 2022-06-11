@@ -107,9 +107,6 @@ export default {
                 })
             }
         },
-        pause(num){
-            document.getElementById('l'+num).style.animationPlayState="paused";
-        },
         goToMyWish(){
             this.$router.push('/myWish')
         },
@@ -154,7 +151,8 @@ export default {
                 .then((response) => {
                     console.log(response)
                     for(let i=0;i<8;i++){
-                        this.wishes.push(
+                        if(response.data.length > i){
+                            this.wishes.push(
                             {
                                 color:0,
                                 createTime:0,
@@ -164,18 +162,19 @@ export default {
                                 picture:0,
                                 text:"This is a wish",
                             },
-                        )
-                        this.$set(this.wishes,this.wishes.length-1,{
-                            createTime:response.data.data[i].createTime,
-                            favorNum:response.data.data[i].favorNum,
-                            messageId:response.data.data[i].messageId,
-                            openId:response.data.data[i].openId,
-                            text:response.data.data[i].text,
-                            grade:response.data.data[i].grade,
-                            labelType:response.data.data[i].labelType,
-                        });
-                        /* console.log("响应对象：")
-                        console.log(this.wishes[i]) */
+                            )
+                            this.$set(this.wishes,this.wishes.length-1,{
+                                createTime:response.data.data[i].createTime,
+                                favorNum:response.data.data[i].favorNum,
+                                messageId:response.data.data[i].messageId,
+                                openId:response.data.data[i].openId,
+                                text:response.data.data[i].text,
+                                grade:response.data.data[i].grade,
+                                labelType:response.data.data[i].labelType,
+                            });
+                            /* console.log("响应对象：")
+                            console.log(this.wishes[i]) */
+                        }
                     }
                 })
                 .catch((response) => {
@@ -273,8 +272,8 @@ export default {
                             messageId:this.wishes[0].messageId,
                             openId:this.wishes[0].openId,
                             text:this.wishes[0].text,
-                            grade:response.data.data[0].grade,
-                            labelType:response.data.data[0].labelType,
+                            grade:this.wishes[0].grade,
+                            labelType:this.wishes[0].labelType,
                         }
                         );
                         this.initBarrage(j)

@@ -54,11 +54,7 @@ export default {
     name:'myWish',
     methods:{
         show(){
-            if(this.showDropdown == true){
-                this.showDropdown = false
-            }else{
-                this.showDropdown = true
-            }
+            this.showDropdown = !this.showDropdown
         },
         updateGrade(grade){
             this.grade = grade
@@ -105,7 +101,7 @@ export default {
             wishText:'',
             grade:'',
             labelType:'留',
-            showDropdown: true
+            showDropdown: false
         }
     },
     mounted(){
