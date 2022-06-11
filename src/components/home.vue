@@ -140,8 +140,6 @@ export default {
                 console.log("弹幕"+num+"更新了")
 
                 this.wishes.shift()
-            }else{
-                document.getElementById('l'+num).style.animationPlayState="paused"
             }
         },
         getRandom(){
