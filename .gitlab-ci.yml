@@ -1,20 +1,30 @@
-image: node:alpine
-
 stages:
-    - install
-    - build
+  - build
+  - deploy
 
 cache:
-    key: Myosotis_online_wish
-    paths:
-        - node_modules
+  paths:
+    - node_modules/
 
-install_job:
-    stage: install
-    script:
-        - yarn install
- 
-build_job:
-    stage: build
-    script:
-        - yarn build
+build:
+  stage: build
+  image: node:14
+  script: 
+    - yarn install
+    - yarn run build
+  artifacts: 
+    paths:
+        - dist/
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  before_script:
+    - apk update && apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - echo "$SSH_HOST_KEY" > ~/.ssh/known_hosts
+  script:
+    - rsync -e 'ssh -p 4242' -atv --delete --progress ./ elegance@192.168.101.212:/home/elegance/Desktop/test/
