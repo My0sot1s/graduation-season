@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import b from './assets/pictures/background.png'
 
 export default {
   name: "App",
   components: {},
   data(){
     return{
-      img: b
+      img: "https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/background.png"
     }
   },
   mounted() {
@@ -73,7 +72,6 @@ export default {
     position: absolute;
     top: 8vh;
     left: 0;
-    background-image: url(./assets/pictures/background.png);
     background-position:53% 50%;
     background-size: auto 92vh;
     background-repeat: no-repeat;

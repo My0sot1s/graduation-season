@@ -110,9 +110,9 @@
 </template>
 
 <script>
-import like from '../assets/pictures/like.png'
-import liked from '../assets/pictures/liked.png'
-import back from '../assets/pictures/back.png'
+var like = "https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/like.png"
+var liked = "https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/liked.png"
+var back = "https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/back.png"
 
 export default {
     name:'rankingList',
