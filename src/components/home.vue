@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import like from '../assets/pictures/like.png'
-import liked from '../assets/pictures/liked.png'
+var like = "https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/like.png"
+var liked = "https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/liked.png"
 
 export default {
     name:'home',
@@ -470,6 +470,6 @@ export default {
         font-weight: 100;
     }
     #write:after{
-       content:url(../assets/pictures/pen.png);
+       content:url("https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/pen.png");
     }
 </style>

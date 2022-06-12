@@ -236,6 +236,6 @@ export default {
         font-family: HYYiHeXianJingW;
     }
     #makeWish:after{
-        content:url(../assets/pictures/mail.png);
+        content:url("https://wish-1309039959.file.myqcloud.com/graduate/assets/pictures/mail.png");
     }
 </style>
