@@ -52,32 +52,6 @@
         那可不是遗失——是珍藏<span class="hand"></span>
       </p>
     </div>
-
-    <div class="second-ani" ref="second" v-if="stage == 'second'">
-      <p class="should-animate" data-delay="danmaku">待疫情后……</p>
-      <Star v-if="star" @end="star = false" />
-      <FakeDanmaku :animating="animatingDanmaku" :handleFavor="handleFavor" />
-      <transition name="fade">
-        <div class="star-tip" v-if="showStarTip">
-          <p class="animate">接下来试着：</p>
-          <WishItem
-            text="长按我"
-            picture="8"
-            color="5"
-            :favored="favored"
-            @favor="handleSampleFavor"
-          />
-        </div>
-      </transition>
-
-      <div class="start-journey" v-show="showJourneyTip" ref="journey">
-        <router-link id="write" class="fancy-button" to="/myWish"
-          >写下你的愿望</router-link
-        >
-      </div>
-    </div>
-
-    <!-- <div id="next" v-if="showArrow" @click="nextStage">→</div> -->
   </div>
 </template>
 
@@ -141,7 +115,7 @@ export default {
       if (!item.nextSibling) {
         setTimeout(() => {
             localStorage.setItem("viewed", true)
-            alert("下一页")
+            this.$router.push("/home")
         }, 1500);
       }
     },
@@ -333,14 +307,5 @@ p.animate {
 .fade-enter-active,
 .fade-leave-active {
   transition: 0.5s ease;
-}
-#next {
-    position: absolute;
-    right: 0;
-    bottom: 10vh;
-    color: white;
-    background-color: pink;
-    width: 20vw;
-    height: 20vw;
 }
 </style>
