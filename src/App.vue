@@ -1,34 +1,3 @@
-<style>
-  @font-face {
-    font-family: "HYMingChanKeBenW";
-    src: url("https://wish-1309039959.file.myqcloud.com/graduate/assets/fonts/HYMingChanKeBenW.ttf")
-  }
-  @font-face {
-    font-family: "HYYiHeXianJingW";
-    src: url("https://wish-1309039959.file.myqcloud.com/graduate/assets/fonts/HYYiHeXianJingW.ttf")
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  #app {
-    width: 100vw;
-    height: 100vh;
-  }
-  #background0 {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 8vh;
-    left: 0;
-    background-position:53% 50%;
-    background-size: auto 92vh;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-</style>
-
 <template>
   <div id="app">
     <meta name="viewport" id="viewportMeta" content="width=device-width, initial-scale=1.0,user-scalable=no">
@@ -48,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    document.body.style.display = "none";
+    document.body.style.display = "block";
     window.onload = document.body.style.display = "block";
     var initViewport = function (height) {
       var metaEl = document.querySelector("#viewportMeta");
@@ -80,4 +49,27 @@ export default {
   },
 };
 </script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  #app {
+    width: 100vw;
+    height: 100vh;
+  }
+  #background0 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    background-position:53% 50%;
+    background-size: auto 92vh;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+</style>
 
