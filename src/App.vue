@@ -52,11 +52,11 @@ export default {
 <style>
   @font-face {
     font-family: "HYMingChanKeBenW";
-    src: url("./assets/fonts/HYMingChanKeBenW.ttf")
+    src: url("https://wish-1309039959.file.myqcloud.com/graduate/assets/fonts/HYMingChanKeBenW.ttf")
   }
   @font-face {
     font-family: "HYYiHeXianJingW";
-    src: url("./assets/fonts/HYYiHeXianJingW.ttf")
+    src: url("https://wish-1309039959.file.myqcloud.com/graduate/assets/fonts/HYYiHeXianJingW.ttf")
   }
   * {
     margin: 0;
