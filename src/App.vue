@@ -17,6 +17,8 @@ export default {
     }
   },
   mounted() {
+    document.body.style.display = "none";
+    window.onload = document.body.style.display = "block";
     var initViewport = function (height) {
       var metaEl = document.querySelector("#viewportMeta");
       var content =
