@@ -1,5 +1,6 @@
 import VueRouter from 'vue-router'
 
+import story from '../components/story'
 import home from '../components/home'
 import myWish from '../components/myWish'
 import rankingList from '../components/rankingList'
@@ -8,7 +9,7 @@ export default new VueRouter({
     routes:[
         {
             path:'/',
-            redirect:'home'
+            redirect:'story'
         },
         {
             path:'/home',
@@ -25,6 +26,10 @@ export default new VueRouter({
         {
             path:'/backstage',
             component:backstage
+        },
+        {
+            path:'/story',
+            component:story
         },
     ]
 })
