@@ -49,7 +49,7 @@ export default {
         },
     },
     mounted(){
-        this.$axios.get('/info/allMessage',{
+        this.$axios.get('/allMessage',{
             headers:{
                 'Token':localStorage.getItem('token')
             }
