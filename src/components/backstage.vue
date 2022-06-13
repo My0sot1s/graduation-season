@@ -7,10 +7,8 @@
       <ul id="myWishes">
         <li v-for="wish in wishes" :key="wish.messageId">
             {{ wish.text }}
-            <div id="operate">
-                <div class="pass" @click="passm(wish)">通过</div>
-                <div class="delete" @click="deletem(wish)">驳回</div>
-            </div>
+            <div id="pass" @click="passm(wish)">通过</div>
+            <div id="delete" @click="deletem(wish)">驳回</div>
             <div class="types">{{ wish.createTime }}</div>
         </li>
       </ul>
@@ -118,16 +116,18 @@ export default {
         text-align: center;
         opacity: 0.9;
     }
-    #operate {
-        display: inline-flex;
-        justify-content: space-between;
+    #delete {
+        display: inline-block;
         position: absolute;
         right: 4vw;
         font-size: 1.5vh;
         color: rgb(245,108,108);
     }
-    .pass {
-        margin-right: 2vw;
+    #pass {
+        display: inline-block;
+        position: absolute;
+        left: 4vw;
+        font-size: 1.5vh;
         color: rgb(103,194,58);
     }
     #myWishes{
