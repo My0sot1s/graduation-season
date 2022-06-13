@@ -7,7 +7,7 @@
         <div id="backImg" :style="{backgroundImage:`url(${back})`}"></div>
         <div id="backText">大家的愿望树</div>
       </div>
-      <div class="text" id="myWishTitle" v-if="this.myWishes.length>1">我的祝福：</div>
+      <div class="text" id="myWishTitle" v-if="this.myWishes.length>1">我的祝福<span :style="{color:'rgb(245,108,108)'}">(您的留言将在审核通过后被大家看见)</span>：</div>
       <div v-if="this.myWishes.length>1" id="m1" class="myWishes" @click="show(1)">{{this.myWishes[1].text}}
         <div class="delete" v-if="showDelete[1]" @click="deletem(1)">删除</div>
       </div>
