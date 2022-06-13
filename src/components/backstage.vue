@@ -7,7 +7,10 @@
       <ul id="myWishes">
         <li v-for="wish in wishes" :key="wish.messageId">
             {{ wish.text }}
-            <div class="delete" @click="deletem(wish)">删除</div>
+            <div id="operate">
+                <div class="pass" @click="passm(wish)">通过</div>
+                <div class="delete" @click="deletem(wish)">驳回</div>
+            </div>
             <div class="types">{{ wish.createTime }}</div>
         </li>
       </ul>
@@ -32,6 +35,21 @@ export default {
         }
     },
     methods:{
+        passm(wish){
+            console.log(wish)
+            this.$axios.post('/pass',
+                    {
+                        'id':wish.messageId
+                    },
+                    {headers:{
+                        'Token':localStorage.getItem('token')
+                    }})
+                    .then((response) => {
+                        if(response.data.code == 200){
+                            this.originWishes.splice(this.originWishes.findIndex(owish => owish.messageId == wish.messageId), 1)
+                        }
+                })
+        },
         deletem(wish){
             console.log(wish)
             this.$axios.post('/delete',
@@ -100,12 +118,17 @@ export default {
         text-align: center;
         opacity: 0.9;
     }
-    .delete {
-        display: inline-block;
+    #operate {
+        display: inline-flex;
+        justify-content: space-between;
         position: absolute;
         right: 4vw;
         font-size: 1.5vh;
         color: rgb(245,108,108);
+    }
+    .pass {
+        margin-right: 2vw;
+        color: rgb(103,194,58);
     }
     #myWishes{
         height: 75vh;

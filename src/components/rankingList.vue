@@ -178,7 +178,6 @@ export default {
                 })
         },
         favor(index){
-            console.log(this.mostPopularWishes[index].messageId)
             if(this.img[index] == like){
                 this.$set(this.img, index, liked)
                 this.mostPopularWishes[index].favorNum++
